@@ -70,7 +70,7 @@ const Footer = () => {
               {policiesData.map((item) => (
                 <li key={item.id}>
                   <Link
-                    href="#"
+                    href={item?.link}
                     className="text-gray-400 hover:text-[#28ace2] transition-colors"
                   >
                     {item.name}

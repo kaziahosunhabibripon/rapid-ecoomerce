@@ -18,6 +18,7 @@ const AppSpinner = ({ clsname }: AppSpinnerProps) => {
         height={80}
         quality={100}
         priority={true}
+        unoptimized={true} // for gif assets needs to unoptimized for better quality
       />
     </div>
   );

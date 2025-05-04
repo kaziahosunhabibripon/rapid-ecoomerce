@@ -37,7 +37,8 @@ const ProductCard = ({
               alt={product.title}
               width={100}
               height={200}
-              className="h-full w-auto object-contain transition-transform group-hover:scale-95"
+              style={{ height: "auto" }}
+              className="w-auto object-contain transition-transform group-hover:scale-95"
             />
 
             <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">

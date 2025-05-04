@@ -43,7 +43,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${tenor.variable} antialiased`}>
+      <body
+        className={`${tenor.variable} antialiased`}
+        suppressHydrationWarning // hydration erro solve
+      >
         <NextTopLoader
           color="var(--brand-color)"
           crawlSpeed={5}

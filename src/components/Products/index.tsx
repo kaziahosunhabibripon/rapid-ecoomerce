@@ -20,7 +20,7 @@ export default function AllProducts() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const handleAppDropdown = (data) => {
-    // console.log(data);
+    console.log(data);
   };
 
   return (

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { BsThreeDots } from "react-icons/bs";
 type Product = {
   id: number;
   title: string;
@@ -40,7 +40,20 @@ export default function ProductGridView({
         <div
           className={`p-4 flex flex-col ${viewMode === "list" ? "w-2/3" : ""}`}
         >
-          <h3 className="text-sm font-medium mb-2">{product.title}</h3>
+          <h3
+            className="text-md font-medium mb-2 text-center"
+            title={product?.title}
+          >
+            {product?.title && product.title.length > 20 ? ( // for title shortener and hover effect name
+              <span className="inline-flex items-center">
+                {product.title.slice(0, 20)}
+                <BsThreeDots className="ml-1" />
+              </span>
+            ) : (
+              product?.title
+            )}
+          </h3>
+
           <div className="mt-auto mx-auto">
             <p className="block mb-2 text-[1.2rem] font-semibold text-brand hover:text-blue-500">
               Start form {product.currency} {product.price}

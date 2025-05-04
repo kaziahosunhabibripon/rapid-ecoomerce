@@ -111,9 +111,9 @@ const FilterSidebar: FC<SidebarItems> = ({
                     role="button"
                     tabIndex={0}
                     className="flex items-center justify-between cursor-pointer"
-                    // onClick={() =>
-                    //   handleLabelClick(category.id, !!category.subCategories)
-                    // }
+                    onClick={() =>
+                      handleLabelClick(category.id, !!category.subCategories)
+                    }
                   >
                     <div className="flex items-center gap-2">
                       <CustomCheckbox
