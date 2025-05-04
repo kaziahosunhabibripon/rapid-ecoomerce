@@ -18,7 +18,7 @@ type ProductCardProps = {
 
 export default function ProductListView({ product }: ProductCardProps) {
   return (
-    <div className="flex flex-col md:flex-row border border-gray-200 rounded-md p-4 w-full bg-white space-y-4 md:space-y-0 md:space-x-4">
+    <div className="flex flex-col md:flex-row border border-gray-200 rounded-md p-4 w-full bg-white space-y-4 md:space-y-0 md:space-x-4 hover:scale-103 transition-all ease-in-out duration-500  hover:shadow-emerald-300 mx-auto text-center">
       <Link
         href={`/product/${product?.id}`}
         className="flex justify-center md:justify-start"
@@ -63,12 +63,12 @@ export default function ProductListView({ product }: ProductCardProps) {
           </div>
         </Link>
       </div>
-      <div className="mt-4 md:mt-0 md:ml-auto flex justify-center items-center">
+      <div className="mt-4 md:mt-0 md:ml-auto flex justify-center items-center ">
         <Link href={`/product/${product?.id}`}>
           <button
             role="button"
             tabIndex={0}
-            className="w-full md:w-auto px-6 py-2 border font-bold border-blue-500 text-blue-500 rounded-md hover:bg-blue-50 transition-colors"
+            className="cursor-pointer w-full md:w-auto px-6 py-2 border font-bold border-blue-500 text-blue-500 rounded-md hover:bg-blue-50 transition-colors"
           >
             BUY NOW
           </button>

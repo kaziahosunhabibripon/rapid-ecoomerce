@@ -22,12 +22,12 @@ export default function ProductGridView({
 }: ProductCardProps) {
   return (
     <div
-      className={`overflow-hidden bg-white hover:shadow-md transition-shadow ${
+      className={`overflow-hidden bg-white hover:shadow-md ${
         viewMode === "list" ? "flex" : ""
-      }`}
+      } hover:scale-103 transition-all ease-in-out duration-500   mx-auto text-center`}
     >
       <Link href={`/product/${product?.id}`}>
-        <div className={`${viewMode === "list" ? "w-1/3" : "w-full"}`}>
+        <div className={`${viewMode === "list" ? "w-1/3" : "w-full"} `}>
           <div className="aspect-square relative ">
             <Image
               src={product.image || "/placeholder.svg"}

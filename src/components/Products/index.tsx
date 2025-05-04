@@ -99,7 +99,9 @@ export default function AllProducts() {
                       >
                         <Grid
                           size={18}
-                          className={viewMode === "grid" && "text-brand"}
+                          className={
+                            viewMode === "grid" ? "text-brand" : undefined
+                          } // error solve rendering undefined local string or boolean
                         />
                       </button>
                       <button
@@ -112,7 +114,9 @@ export default function AllProducts() {
                       >
                         <List
                           size={18}
-                          className={viewMode === "list" && "text-brand"}
+                          className={
+                            viewMode === "list" ? "text-brand" : undefined
+                          }
                         />
                       </button>
                     </div>
@@ -125,7 +129,7 @@ export default function AllProducts() {
                   viewMode === "grid"
                     ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
                     : "grid-cols-1"
-                } gap-4`}
+                } gap-4 `}
               >
                 {productsData?.map((product, index) =>
                   viewMode === "grid" ? (
