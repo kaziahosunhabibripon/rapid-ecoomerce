@@ -7,8 +7,19 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Clock, Facebook, Instagram, Twitter, Youtube } from "react-feather";
 import CommonTitle from "@/helpers/ui/CommonTitle";
-
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 const AboutUs = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+  const stats = [
+    { value: "28+", label: "Growing Years", color: "text-sky-500" },
+    { value: "354+", label: "Type of Products" },
+    { value: "22+", label: "Sales Outlets" },
+    { value: "2lac+", label: "Annual Sales" },
+  ];
   // ANIMATE ON SCROLL
   useEffect(() => {
     AOS.init({ offset: 120, duration: 2000, easing: "ease-out" });
@@ -266,6 +277,51 @@ const AboutUs = () => {
                     <Youtube size={18} />
                     <span className="sr-only">YouTube</span>
                   </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-full">
+              <div className="bg-white py-10">
+                <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                  {stats.map((stat, index) => {
+                    const numberMatch =
+                      stat.value.match(/^(\d+)([a-zA-Z+]+)?$/);
+                    const number = numberMatch ? parseInt(numberMatch[1]) : 0;
+                    const suffix = numberMatch?.[2] || "";
+
+                    return (
+                      <div key={index} ref={ref}>
+                        <div
+                          className={`text-5xl  font-extrabold ${
+                            stat.color || "text-gray-900"
+                          }`}
+                        >
+                          {inView ? (
+                            <CountUp
+                              end={number}
+                              duration={2}
+                              suffix={suffix}
+                            />
+                          ) : (
+                            `0${suffix}`
+                          )}
+                        </div>
+                        <div
+                          className={`text-md font-normal mt-1 ${
+                            stat.color || "text-gray-500"
+                          }`}
+                        >
+                          {stat.label}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
