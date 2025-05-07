@@ -9,6 +9,7 @@ import { Clock, Facebook, Instagram, Twitter, Youtube } from "react-feather";
 import CommonTitle from "@/helpers/ui/CommonTitle";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+
 const AboutUs = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -78,7 +79,7 @@ const AboutUs = () => {
                   <div className="flex items-center mt-4">
                     <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
                       <Image
-                        src="/assets/acs-ab-us-img-2.jpg.webp"
+                        src="/assets/acs-ab-us-Image-2.jpg.webp"
                         alt="Brooklyn Simmons"
                         width={40}
                         height={40}
@@ -95,7 +96,7 @@ const AboutUs = () => {
                 {/* Bottom Row */}
                 <div className="rounded-lg overflow-hidden">
                   <Image
-                    src="/assets/acs-ab-us-img-2.jpg.webp"
+                    src="/assets/acs-ab-us-Image-2.jpg.webp"
                     alt="Interior space"
                     width={300}
                     height={100}
@@ -104,7 +105,7 @@ const AboutUs = () => {
                 </div>
                 <div className=" overflow-hidden">
                   <Image
-                    src="/assets/acs-ab-us-img-3.jpg.webp"
+                    src="/assets/acs-ab-us-Image-3.jpg.webp"
                     alt="Product image"
                     width={300}
                     height={200}
@@ -199,7 +200,7 @@ const AboutUs = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
               <Image
-                src="/assets/contact_page_imgwebp.webp"
+                src="/assets/contact_page_Imagewebp.webp"
                 alt="about us gadgets"
                 width={800}
                 height={600}
@@ -323,6 +324,224 @@ const AboutUs = () => {
                     );
                   })}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 mt-2">
+        <div className="max-w-7xl mx-auto" data-aos="fade-up">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/2 space-y-4">
+              <div className="max-w-2xl mx-auto px-4 py-12">
+                <h3 className="text-sky-500  text-4xl font-extrabold  md:w-[66%] py-1">
+                  Our Mission
+                </h3>
+
+                <div className="text-gray-700 space-y-4 mb-8">
+                  <p>
+                    At <span className="text-brand font-medium">Rapid</span>, we
+                    are more than just a brand. We are a symbol of innovation,
+                    precision, to streamline business operations across
+                    industries. With a strong commitment to quality and
+                    performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <Image
+                src="/assets/mission.jpg"
+                alt="Mission"
+                width={800}
+                height={600}
+                loading="lazy"
+                className="rounded-tl-4xl rounded-br-4xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto" data-aos="fade-up">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/2">
+              <Image
+                src="/assets/mission.jpg"
+                alt="Mission"
+                width={800}
+                height={600}
+                loading="lazy"
+                className="rounded-tl-4xl rounded-br-4xl"
+              />
+            </div>
+            <div className="md:w-1/2 space-y-4">
+              <div className="max-w-2xl mx-auto px-4 py-12">
+                <h3 className="text-sky-500  text-4xl font-extrabold  md:w-[66%] py-1">
+                  Our Vission
+                </h3>
+
+                <div className="text-gray-700 space-y-4 mb-8">
+                  <p>
+                    At <span className="text-brand font-medium">Rapid</span>, we
+                    are more than just a brand. We are a symbol of innovation,
+                    precision, to streamline business operations across
+                    industries. With a strong commitment to quality and
+                    performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2 my-4">
+              <h2 className="mx-auto  tracking-tighter text-4xl font-extrabold  text-sky-500">
+                Our Core Team Member
+              </h2>
+            </div>
+          </div>
+          <div
+            className="px-[120px] grid grid-cols-2 md:grid-cols-4 gap-4"
+            data-aos="fade-up"
+          >
+            <div className="mx-auto flex flex-col w-full h-28 items-center bg-white rounded-lg hover:shadow-sm md:flex-row md:max-w-xl">
+              <Image
+                className="p-2 m-2 rounded-full w-16 h-16"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
+                alt="Image"
+                width={50}
+                height={50}
+              />
+              <div className="flex flex-col justify-between px-2">
+                <h5 className="mb-1 text-md font-bold text-gray-900 dark:text-white">
+                  Noteworthy technology
+                </h5>
+                <p className="mb-2 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Here are the biggest technology.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto flex flex-col w-full h-28 items-center bg-white rounded-lg hover:shadow-sm md:flex-row md:max-w-xl">
+              <Image
+                className="p-2 m-2 rounded-full w-16 h-16"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
+                alt="Image"
+                width={50}
+                height={50}
+              />
+              <div className="flex flex-col justify-between px-2">
+                <h5 className="mb-1 text-md font-bold text-gray-900 dark:text-white">
+                  Noteworthy technology
+                </h5>
+                <p className="mb-2 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Here are the biggest technology.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto flex flex-col w-full h-28 items-center bg-white rounded-lg hover:shadow-sm md:flex-row md:max-w-xl">
+              <Image
+                className="p-2 m-2 rounded-full w-16 h-16"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
+                alt="Image"
+                width={50}
+                height={50}
+              />
+              <div className="flex flex-col justify-between px-2">
+                <h5 className="mb-1 text-md font-bold text-gray-900 dark:text-white">
+                  Noteworthy technology
+                </h5>
+                <p className="mb-2 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Here are the biggest technology.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto flex flex-col w-full h-28 items-center bg-white rounded-lg hover:shadow-sm md:flex-row md:max-w-xl">
+              <Image
+                className="p-2 m-2 rounded-full w-16 h-16"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
+                alt="Image"
+                width={50}
+                height={50}
+              />
+              <div className="flex flex-col justify-between px-2">
+                <h5 className="mb-1 text-md font-bold text-gray-900 dark:text-white">
+                  Noteworthy technology
+                </h5>
+                <p className="mb-2 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Here are the biggest technology.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto flex flex-col w-full h-28 items-center bg-white rounded-lg hover:shadow-sm md:flex-row md:max-w-xl">
+              <Image
+                className="p-2 m-2 rounded-full w-16 h-16"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
+                alt="Image"
+                width={50}
+                height={50}
+              />
+              <div className="flex flex-col justify-between px-2">
+                <h5 className="mb-1 text-md font-bold text-gray-900 dark:text-white">
+                  Noteworthy technology
+                </h5>
+                <p className="mb-2 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Here are the biggest technology.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto flex flex-col w-full h-28 items-center bg-white rounded-lg hover:shadow-sm md:flex-row md:max-w-xl">
+              <Image
+                className="p-2 m-2 rounded-full w-16 h-16"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
+                alt="Image"
+                width={50}
+                height={50}
+              />
+              <div className="flex flex-col justify-between px-2">
+                <h5 className="mb-1 text-md font-bold text-gray-900 dark:text-white">
+                  Noteworthy technology
+                </h5>
+                <p className="mb-2 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Here are the biggest technology.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto flex flex-col w-full h-28 items-center bg-white rounded-lg hover:shadow-sm md:flex-row md:max-w-xl">
+              <Image
+                className="p-2 m-2 rounded-full w-16 h-16"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
+                alt="Image"
+                width={50}
+                height={50}
+              />
+              <div className="flex flex-col justify-between px-2">
+                <h5 className="mb-1 text-md font-bold text-gray-900 dark:text-white">
+                  Noteworthy technology
+                </h5>
+                <p className="mb-2 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Here are the biggest technology.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto flex flex-col w-full h-28 items-center bg-white rounded-lg hover:shadow-sm md:flex-row md:max-w-xl">
+              <Image
+                className="p-2 m-2 rounded-full w-16 h-16"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
+                alt="Image"
+                width={50}
+                height={50}
+              />
+              <div className="flex flex-col justify-between px-2">
+                <h5 className="mb-1 text-md font-bold text-gray-900 dark:text-white">
+                  Noteworthy technology
+                </h5>
+                <p className="mb-2 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Here are the biggest technology.
+                </p>
               </div>
             </div>
           </div>

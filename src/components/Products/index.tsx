@@ -20,6 +20,7 @@ import MostPopular from "../Home/MostPopular";
 import Recommended from "../Home/Recommended";
 import BrandNProducts from "../Home/BrandNProducts/BrandNProducts";
 import WhyJoinUs from "../Why/WhyJoinUs";
+import Image from "next/image";
 
 // const products = {
 //   "Flash Sale Today": [
@@ -228,42 +229,19 @@ export default function AllProducts() {
       <Recommended />
       <BrandNProducts />
       <WhyJoinUs />
-      {/* <section>
-        <div className="p-8 bg-gray-100 min-h-screen">
-          <div className="grid grid-cols-4 gap-6">
-            {Object.entries(products).map(([section, items]) => (
-              <div key={section}>
-                <h2 className="text-blue-600 font-semibold mb-4">{section}</h2>
-                <div className="space-y-4">
-                  {items.map((item, index) => (
-                    <Link
-                      key={index}
-                      href="#"
-                      className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-                    >
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        width={192}
-                        height={192}
-                        className="object-cover w-full h-48 md:h-auto md:w-48 rounded-t-lg md:rounded-none md:rounded-s-lg"
-                      />
-                      <div className="flex flex-col justify-between p-4 leading-normal">
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                          {item.name}
-                        </h5>
-                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                          {item.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
+      <>
+        <div className="grid grid-cols-8 gap-4">
+          <div>
+            <Image
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
+              alt="image"
+              width={50}
+              height={50}
+              className="w-28 h-28"
+            />
           </div>
         </div>
-      </section> */}
+      </>
     </section>
   );
 }
