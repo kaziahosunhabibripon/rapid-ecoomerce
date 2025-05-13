@@ -1,8 +1,7 @@
 "use client";
 import { productsData } from "@/data/productsData";
 import ProductCard from "../SingleFood/ProductCard";
-import AppButton from "@/helpers/ui/AppButton";
-import { ChevronsRight } from "react-feather";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -60,14 +59,6 @@ export default function Recommended() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-center items-center py-12">
-        <AppButton
-          title="VIEW MORE"
-          link="/products"
-          showIcon
-          btnIcon={ChevronsRight}
-        />
-      </div>
     </main>
   );
 }

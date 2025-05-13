@@ -11,6 +11,8 @@ import ClientReview from "./ClientReview";
 import BrandNProducts from "./BrandNProducts/BrandNProducts";
 import Offer from "./Offer";
 import RecentlyView from "./RecentlyView";
+import FeaturesProduct from "./FeaturesProduct";
+import HurryUpDeals from "./HurryUpDeals";
 
 const HomeComponent = () => {
   return (
@@ -22,8 +24,10 @@ const HomeComponent = () => {
       <MostPopular />
       <RecentlyView />
       <BrandNProducts />
+      <FeaturesProduct />
       <Processing />
       <Offer />
+      <HurryUpDeals />
       <ClientReview />
       <NewsletterSignup />
     </div>
