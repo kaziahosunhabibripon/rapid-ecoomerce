@@ -10,6 +10,7 @@ import Recommended from "./Recommended";
 import ClientReview from "./ClientReview";
 import BrandNProducts from "./BrandNProducts/BrandNProducts";
 import Offer from "./Offer";
+import RecentlyView from "./RecentlyView";
 
 const HomeComponent = () => {
   return (
@@ -17,8 +18,9 @@ const HomeComponent = () => {
       <Header />
       <ProductCategories />
       <NewArrival />
-      <MostPopular />
       <Recommended />
+      <MostPopular />
+      <RecentlyView />
       <BrandNProducts />
       <Processing />
       <Offer />

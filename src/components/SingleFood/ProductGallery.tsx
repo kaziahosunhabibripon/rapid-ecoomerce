@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { alterCardImage } from "@/utils/appHelpers";
-import ImageZoom from "react-image-magnifier-zoom";
+// import ImageZoom from "react-image-magnifier-zoom";
 const ProductGallery = ({ images, foodImg }) => {
   const [selectedImage, setSelectedImage] = useState(images[0] || []);
 
@@ -17,15 +17,15 @@ const ProductGallery = ({ images, foodImg }) => {
         {/* Main image */}
         <div className="rounded-full border-2 border-dashed border-[#28ade2ad] p-2 inline-block">
           <div className="relative w-[200px] h-[200px] md:w-[400px] md:h-[400px] overflow-hidden rounded-full group">
-            {/* <Image
+            <Image
               src={foodImg || selectedImage || alterCardImage}
               alt="Product"
               width={400}
               height={400}
               loading="lazy"
               className="w-full h-full object-cover transform transition-transform duration-300 ease-in-out group-hover:scale-150 group-hover:origin-center"
-            /> */}
-            <ImageZoom // magnifier zoom effect added there
+            />
+            {/* <ImageZoom // magnifier zoom effect added there
               src={foodImg || selectedImage || alterCardImage}
               alt="Product"
               width={400}
@@ -33,7 +33,7 @@ const ProductGallery = ({ images, foodImg }) => {
               loading="lazy"
               magnifierSize={150}
               className="w-full h-full object-cover transition-transform duration-300 ease-in-out origin-center group-hover:scale-105"
-            />
+            /> */}
           </div>
         </div>
       </div>

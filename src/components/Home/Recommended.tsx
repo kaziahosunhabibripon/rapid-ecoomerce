@@ -9,18 +9,35 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-
+import { MdArrowBackIosNew } from "react-icons/md";
+import { MdArrowForwardIos } from "react-icons/md";
 export default function Recommended() {
   return (
     <main className="container mx-auto px-4 py-8 w-full">
       <div className="text-center mb-8">
-        <p className="text-brand mb-2 font-semibold">Recommend for you</p>
+        <p className="text-brand mb-2 font-semibold">Products For You</p>
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
           Recommend Products
         </h1>
         <p className="text-gray-600 text-base font-medium">
-          Proponents of content strategy may shun of dummy copy designers
+          How can you evaluate content without design
         </p>
+      </div>
+      <div className="flex items-center justify-between border-b border-gray-300 mb-8">
+        <h1 className="text-3xl font-bold text-gray-500">Recommend for you</h1>
+
+        <div className="flex space-x-2">
+          <button className="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+            <span className="material-icons">
+              <MdArrowBackIosNew />
+            </span>
+          </button>
+          <button className="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+            <span className="material-icons">
+              <MdArrowForwardIos />
+            </span>
+          </button>
+        </div>
       </div>
       <Swiper
         modules={[Autoplay, Navigation]}

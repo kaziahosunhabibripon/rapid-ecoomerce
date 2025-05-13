@@ -63,6 +63,45 @@ const categories: CategoryProps[] = [
 export default function ProductCategories() {
   return (
     <div className="w-full py-12 px-4 md:px-6 container mx-auto">
+      <div className="text-center mb-8">
+        <p className="text-brand mb-2 font-semibold">On The Go</p>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Top Selling</h1>
+        <p className="text-gray-600 text-base font-medium">
+          How can you evaluate content without design
+        </p>
+      </div>
+      <div className="flex items-center justify-between border-b border-gray-300 mb-8">
+        <h1 className="text-3xl font-bold text-gray-500 mb-2">Top Selling</h1>
+
+        <div className="flex flex-col">
+          <ul className="flex space-x-4">
+            <Link
+              href="#"
+              className="cursor-pointer  text-lg hover:animate-pulse hover:text-gray-700 transition duration-200"
+            >
+              Smart Phone
+            </Link>
+            <Link
+              href="#"
+              className="cursor-pointer  text-lg hover:animate-pulse hover:text-gray-700 transition duration-200"
+            >
+              Head Phone
+            </Link>
+            <Link
+              href="#"
+              className="cursor-pointer  text-lg hover:animate-pulse hover:text-gray-700 transition duration-200"
+            >
+              Laptop
+            </Link>
+            <Link
+              href="#"
+              className="cursor-pointer  text-lg hover:animate-pulse hover:text-gray-700 transition duration-200"
+            >
+              Accessories
+            </Link>
+          </ul>
+        </div>
+      </div>
       <Swiper
         modules={[Autoplay, Navigation]}
         autoplay={{
@@ -84,13 +123,13 @@ export default function ProductCategories() {
               href={category.href}
               className="flex flex-col items-center text-center group hover:bg-gray-100 transition-colors duration-300 ease-in-out p-4 rounded-lg"
             >
-              <div className="relative w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center mb-3 overflow-hidden">
+              <div className="relative flex items-center justify-center mb-3 overflow-hidden">
                 <Image
                   src={category.imageSrc || "/placeholder.svg"}
                   alt={category.name}
-                  width={60}
-                  height={60}
-                  className="object-contain transition-transform group-hover:scale-110"
+                  width={200}
+                  height={200}
+                  className="object-cover rounded-full transition-transform group-hover:scale-110"
                 />
               </div>
               <h3 className="text-[1.3rem] font-medium text-gray-900">
