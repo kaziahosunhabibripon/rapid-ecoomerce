@@ -115,48 +115,6 @@ export default function ClientReview() {
               customers
             </p>
           </div>
-          <div className="flex gap-2">
-            <button
-              onClick={handlePrevious}
-              aria-label="Previous testimonials"
-              className="h-9 w-9 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-4 w-4"
-              >
-                <path d="m15 18-6-6 6-6" />
-              </svg>
-            </button>
-            <button
-              onClick={handleNext}
-              aria-label="Next testimonials"
-              className="h-9 w-9 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-4 w-4"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </button>
-          </div>
         </div>
 
         <div className="relative">
@@ -166,43 +124,87 @@ export default function ClientReview() {
           </div>
 
           <div className="relative overflow-hidden">
-            <div
-              className={`grid grid-cols-1 md:grid-cols-3 gap-6 transition-transform duration-500 ease-in-out ${
-                isAnimating && slideDirection === "right"
-                  ? "translate-x-[-5%] opacity-0"
-                  : ""
-              } ${
-                isAnimating && slideDirection === "left"
-                  ? "translate-x-[5%] opacity-0"
-                  : ""
-              }`}
-            >
-              {getVisibleTestimonials().map((testimonial) => (
-                <div key={testimonial.id} className="p-6 rounded-lg">
-                  <div className="flex items-center mb-4">
-                    <div className="relative w-12 h-12 mr-4">
-                      <Image
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        fill
-                        className="rounded-full object-cover"
-                      />
+            <div className="flex items-center justify-center gap-2">
+              <button
+                onClick={handlePrevious}
+                aria-label="Previous testimonials"
+                className="rounded-full border bg-sky-500 text-gray-50 border-gray-200 flex items-center justify-center transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-9 w-9"
+                >
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+              <div
+                className={`grid grid-cols-1 md:grid-cols-3 gap-6 transition-transform duration-500 ease-in-out ${
+                  isAnimating && slideDirection === "right"
+                    ? "translate-x-[-5%] opacity-0"
+                    : ""
+                } ${
+                  isAnimating && slideDirection === "left"
+                    ? "translate-x-[5%] opacity-0"
+                    : ""
+                }`}
+              >
+                {getVisibleTestimonials().map((testimonial) => (
+                  <div key={testimonial.id} className="p-6 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <div className="relative w-12 h-12 mr-4">
+                        <Image
+                          src={testimonial.image || "/placeholder.svg"}
+                          alt={testimonial.name}
+                          fill
+                          className="rounded-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900">
+                          {testimonial.name}
+                        </h3>
+                        <p className="text-sm text-gray-500">
+                          Verified Customer
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-medium text-gray-900">
-                        {testimonial.name}
-                      </h3>
-                      <p className="text-sm text-gray-500">Verified Customer</p>
+                    <div className="flex mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <StarIcon key={i} filled={i < testimonial.rating} />
+                      ))}
                     </div>
+                    <p className="text-gray-600">{testimonial.text}</p>
                   </div>
-                  <div className="flex mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} filled={i < testimonial.rating} />
-                    ))}
-                  </div>
-                  <p className="text-gray-600">{testimonial.text}</p>
-                </div>
-              ))}
+                ))}
+              </div>
+              <button
+                onClick={handleNext}
+                aria-label="Next testimonials"
+                className="rounded-full border bg-sky-500 text-gray-50 flex items-center justify-center  transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-9 w-9"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
