@@ -1,3 +1,4 @@
+"use client";
 import AppButton from "@/helpers/ui/AppButton";
 import Image from "next/image";
 import { ChevronsRight } from "react-feather";

@@ -146,7 +146,7 @@ export default function ClientReview() {
                 </svg>
               </button>
               <div
-                className={`grid grid-cols-1 md:grid-cols-3 gap-6 transition-transform duration-500 ease-in-out ${
+                className={`grid grid-cols-1 md:grid-cols-3 gap-6 p-2 transition-transform duration-500 ease-in-out ${
                   isAnimating && slideDirection === "right"
                     ? "translate-x-[-5%] opacity-0"
                     : ""
@@ -157,7 +157,10 @@ export default function ClientReview() {
                 }`}
               >
                 {getVisibleTestimonials().map((testimonial) => (
-                  <div key={testimonial.id} className="p-6 rounded-lg">
+                  <div
+                    key={testimonial.id}
+                    className="p-6 rounded-lg shadow-lg shadow-sky-100"
+                  >
                     <div className="flex items-center mb-4">
                       <div className="relative w-12 h-12 mr-4">
                         <Image

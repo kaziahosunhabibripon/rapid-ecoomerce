@@ -14,6 +14,7 @@ import RecentlyView from "./RecentlyView";
 import FeaturesProduct from "./FeaturesProduct";
 import HurryUpDeals from "./HurryUpDeals";
 import OfferDeals from "./OfferDeals";
+import LatestPost from "./LatestPost";
 
 const HomeComponent = () => {
   return (
@@ -31,6 +32,7 @@ const HomeComponent = () => {
       <HurryUpDeals />
       <OfferDeals />
       <ClientReview />
+      <LatestPost />
       <NewsletterSignup />
     </div>
   );
