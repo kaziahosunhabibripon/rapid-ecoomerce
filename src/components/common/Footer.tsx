@@ -16,7 +16,7 @@ import {
 } from "react-icons/gi";
 
 const locations = [
-  { country: "KSA", address: "3948 Ray Cort", icon: GiCamel },
+  { country: "KSA", address: "3948 Ray Court", icon: GiCamel },
   { country: "UAE", address: "Dubai Silicon Oasis", icon: GiPalmTree },
   { country: "Qatar", address: "West Bay Area", icon: GiOilDrum },
   { country: "Kuwait", address: "Salmiya Street 12", icon: GiCityCar },
@@ -37,18 +37,18 @@ const Footer = () => {
       <div className="border-b border-gray-800">
         <div className="w-full container mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
               {locations.map(({ country, address, icon: Icon }, index) => (
                 <span
                   key={index}
-                  className="flex flex-col items-center md:flex-row md:max-w-xl"
+                  className="flex flex-col items-center md:flex-row"
                 >
-                  <Icon className="text-4xl text-white" />
-                  <div className="flex flex-col justify-between px-2 py-1 leading-normal">
-                    <h6 className="mb-1 text-md font-normal tracking-tight text-gray-200">
+                  <Icon className="text-4xl text-slate-100" />
+                  <div className="flex flex-col justify-between p-2 leading-normal">
+                    <h6 className="py-2   text-md font-normal tracking-tight text-gray-200">
                       {country}
                     </h6>
-                    <p className="mb-1 font-extralight text-gray-400">
+                    <p className="py-1  font-extralight text-sm text-gray-400">
                       {address}
                     </p>
                   </div>

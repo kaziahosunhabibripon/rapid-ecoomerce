@@ -34,7 +34,7 @@ export default function NewsletterSignup() {
     <div className="py-12">
       <div className="w-full mx-auto bg-brand text-white p-8 py-12 text-center ">
         <h2 className="text-3xl font-bold mb-4 tracking-wide uppercase">
-          GET OUR LATEST gadgets UPDATES
+          GET OUR LATEST BLOGS UPDATES
         </h2>
 
         <p className="mb-6 text-base">
@@ -66,16 +66,19 @@ export default function NewsletterSignup() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email Address"
-                className="w-full py-3 pl-10 pr-3 bg-gray-100 text-black placeholder-gray-800 rounded-l-md focus:outline-none"
+                className="w-full py-3 pl-10 pr-3 rounded-l-lg bg-gray-100 text-black placeholder-gray-800 focus:outline-none"
                 required
               />
             </div>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-white cursor-pointer rounded-full p-3 ml-2 text-black hover:bg-gray-200 transition-colors"
+              className="bg-white cursor-pointer rounded-r-lg p-3 text-black hover:bg-gray-200 transition-colors"
             >
-              <Send className="h-5 w-5 text-gray-500" />
+              <span className="flex items-center justify-center gap-2">
+                <p className=" text-gray-500">Subscribes </p>
+                <Send className="h-6 w-6 text-sky-500" />
+              </span>
             </button>
           </form>
         )}
