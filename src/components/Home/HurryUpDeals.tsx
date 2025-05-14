@@ -34,7 +34,7 @@ export default function HurryUpDeals() {
           Hurry Up Deals
         </h1>
         <div className="flex items-center justify-between">
-          <div className="flex flex-col">
+          <div className="flex flex-col py-2">
             <DealCount endDate={offerEndTime} />
           </div>
         </div>

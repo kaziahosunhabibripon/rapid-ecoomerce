@@ -6,7 +6,23 @@ import { navData } from "@/data/navData";
 import { footerSocialLinks, policiesData } from "@/data";
 import { HiOutlinePhoneArrowDownLeft } from "react-icons/hi2";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
+import {
+  GiCamel,
+  GiOilDrum,
+  GiPalmTree,
+  GiFalconMoon,
+  GiDesert,
+  GiCityCar,
+} from "react-icons/gi";
 
+const locations = [
+  { country: "KSA", address: "3948 Ray Cort", icon: GiCamel },
+  { country: "UAE", address: "Dubai Silicon Oasis", icon: GiPalmTree },
+  { country: "Qatar", address: "West Bay Area", icon: GiOilDrum },
+  { country: "Kuwait", address: "Salmiya Street 12", icon: GiCityCar },
+  { country: "Bahrain", address: "Manama Block 338", icon: GiFalconMoon },
+  { country: "Oman", address: "Muscat Business Park", icon: GiDesert },
+];
 const Footer = () => {
   // states
   const [value, setValue] = useState("");
@@ -17,38 +33,27 @@ const Footer = () => {
 
   return (
     <footer className="bg-brand-secondary text-white relative ">
+      {/* Footer upper  */}
       <div className="border-b border-gray-800">
         <div className="w-full container mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-              <p className="text-gray-400 text-sm">
-                Developed by:{" "}
-                <Link
-                  href="https://rapidsmarterp.com/"
-                  className="hover:text-blue-500"
-                  target="_blank"
-                  rel="noopener noreferrer"
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1">
+              {locations.map(({ country, address, icon: Icon }, index) => (
+                <span
+                  key={index}
+                  className="flex flex-col items-center md:flex-row md:max-w-xl"
                 >
-                  Rapid
-                </Link>
-              </p>
-            </div>
-            <div className="text-gray-400 text-sm text-center">
-              Copyright © 2025 Rapid All Rights Reserved.
-            </div>
-            <div className="flex gap-4 text-sm">
-              <Link
-                href="#"
-                className="text-gray-400 hover:text-[#28ace2] transition-colors"
-              >
-                Terms & Condition
-              </Link>
-              <Link
-                href="/privacy-policy"
-                className="text-gray-400 hover:text-[#28ace2] transition-colors"
-              >
-                Privacy Policy
-              </Link>
+                  <Icon className="text-4xl text-white" />
+                  <div className="flex flex-col justify-between px-2 py-1 leading-normal">
+                    <h6 className="mb-1 text-md font-normal tracking-tight text-gray-200">
+                      {country}
+                    </h6>
+                    <p className="mb-1 font-extralight text-gray-400">
+                      {address}
+                    </p>
+                  </div>
+                </span>
+              ))}
             </div>
           </div>
         </div>
