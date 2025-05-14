@@ -1,73 +1,131 @@
 "use client";
-import { productsData } from "@/data/productsData";
-
-import AppButton from "@/helpers/ui/AppButton";
-import { ChevronsRight } from "react-feather";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { MdOutlineResetTv } from "react-icons/md";
+interface CategoryProps {
+  name: string;
+  productCount: number;
+  imageSrc: string;
+  href: string;
+  categoryType: string;
+}
 
-import TopSellCard from "../SingleFood/TopSellCard";
-import Link from "next/link";
+const categories: CategoryProps[] = [
+  {
+    name: "Barcode Printers",
+    productCount: 34,
+    imageSrc: "/assets/Label-Printers.jpg",
+    href: "/categories/cases",
+    categoryType: "Accessories",
+  },
+  {
+    name: "Cash Drawers",
+    productCount: 15,
+    imageSrc: "/assets/cash_drawer.jpg",
+    href: "/",
+    categoryType: "Accessories",
+  },
+  {
+    name: "Card Readers",
+    productCount: 18,
+    imageSrc: "/assets/cardencoder.jpg",
+    href: "/",
+    categoryType: "Accessories",
+  },
+  {
+    name: "Pos Printers",
+    productCount: 12,
+    imageSrc: "/assets/POS-Printer.jpg",
+    href: "/categories/charger",
+    categoryType: "Laptop",
+  },
+  {
+    name: "Post Software",
+    productCount: 38,
+    imageSrc: "/assets/Mobile-Printer.jpg",
+    href: "/",
+    categoryType: "Smart Phone",
+  },
+  {
+    name: "Portable Printers",
+    productCount: 18,
+    imageSrc: "/assets/portable_printer.jpg",
+    href: "/",
+    categoryType: "Smart Phone",
+  },
+  {
+    name: "PDT",
+    productCount: 13,
+    imageSrc: "/assets/PDT.jpg",
+    href: "/",
+    categoryType: "Head Phone",
+  },
+];
 
 export default function FeaturesProduct() {
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
+  const filteredCategories = activeFilter
+    ? categories.filter((cat) => cat.categoryType === activeFilter)
+    : categories;
+
+  const filterOptions = ["Smart Phone", "Head Phone", "Laptop", "Accessories"];
+
   return (
-    <main className="container mx-auto px-4 py-8 w-full">
+    <div className="w-full py-12 px-4 md:px-6 container mx-auto">
       <div className="text-center mb-8">
         <p className="text-brand mb-2 font-semibold">
           Features Product For you
         </p>
+
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          Features Product For You
+          Features Product For you
         </h1>
+
         <p className="text-gray-600 text-base font-medium">
           How can you evaluate content without design
         </p>
       </div>
+
       <div className="flex items-center justify-between border-b border-gray-300 mb-8">
-        <h1 className="text-3xl font-bold text-gray-500 mb-2">
-          Features Product
-        </h1>
-        <div className="flex items-center justify-between">
-          <div className="flex flex-col">
-            <ul className="flex space-x-4">
-              <Link
-                href="#"
-                className="cursor-pointer  text-lg hover:animate-pulse hover:text-gray-700 transition duration-200"
+        <h1 className="text-3xl font-bold text-gray-500 mb-2">Top Selling</h1>
+
+        <div className="flex flex-col">
+          <ul className="flex space-x-4">
+            {filterOptions.map((type) => (
+              <button
+                key={type}
+                onClick={() => setActiveFilter(type)}
+                className={`cursor-pointer text-lg transition duration-200 ${
+                  activeFilter === type
+                    ? "text-gray-800 font-semibold border-b-2 border-blue-500"
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
               >
-                Smart Phone
-              </Link>
-              <Link
-                href="#"
-                className="cursor-pointer  text-lg hover:animate-pulse hover:text-gray-700 transition duration-200"
+                {type}
+              </button>
+            ))}
+            {activeFilter && (
+              <button
+                onClick={() => setActiveFilter(null)}
+                className="text-gray-800 cursor-progress font-semibold ml-4 hover:border-b-2 hover:border-blue-400"
               >
-                Head Phone
-              </Link>
-              <Link
-                href="#"
-                className="cursor-pointer  text-lg hover:animate-pulse hover:text-gray-700 transition duration-200"
-              >
-                Laptop
-              </Link>
-              <Link
-                href="#"
-                className="cursor-pointer  text-lg hover:animate-pulse hover:text-gray-700 transition duration-200"
-              >
-                Accessories
-              </Link>
-            </ul>
-          </div>
+                <span className="flex items-center justify-center gap-1">
+                  Reset <MdOutlineResetTv className="text-blue-500" />
+                </span>
+              </button>
+            )}
+          </ul>
         </div>
       </div>
 
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        {productsData?.slice(0, 5).map((product, index) => (
-          <ProductCard product={product} index={index} key={index} />
-        ))}
-      </div> */}
       <Swiper
         modules={[Autoplay, Navigation]}
         autoplay={{
@@ -83,20 +141,31 @@ export default function FeaturesProduct() {
           768: { slidesPerView: 4, spaceBetween: 10 },
         }}
       >
-        {productsData?.map((product, index) => (
-          <SwiperSlide key={index}>
-            <TopSellCard product={product} index={index} />
+        {filteredCategories.map((category) => (
+          <SwiperSlide key={category.name}>
+            <Link
+              href={category.href}
+              className="flex flex-col items-center text-center group hover:bg-gray-100 transition-colors duration-300 ease-in-out p-4 rounded-lg"
+            >
+              <div className="relative flex items-center justify-center mb-3 overflow-hidden">
+                <Image
+                  src={category.imageSrc || "/placeholder.svg"}
+                  alt={category.name}
+                  width={200}
+                  height={200}
+                  className="object-cover rounded-full transition-transform group-hover:scale-110"
+                />
+              </div>
+              <h3 className="text-[1.3rem] font-medium text-gray-900">
+                {category.name}
+              </h3>
+              <p className="text-[1rem] text-gray-500">
+                {category.productCount} products
+              </p>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-center items-center py-12">
-        <AppButton
-          title="MORE SERVICES"
-          link="/products"
-          showIcon
-          btnIcon={ChevronsRight}
-        />
-      </div>
-    </main>
+    </div>
   );
 }
