@@ -33,9 +33,9 @@ const HomeComponent = () => {
       <HurryUpDeals />
       <OfferDeals />
       <LatestPost />
-      <NewsletterSignup />
       <Promoted />
       <ClientReview />
+      <NewsletterSignup />
     </div>
   );
 };
