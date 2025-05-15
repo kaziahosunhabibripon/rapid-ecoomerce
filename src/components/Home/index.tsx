@@ -32,10 +32,10 @@ const HomeComponent = () => {
       <Offer />
       <HurryUpDeals />
       <OfferDeals />
-      <ClientReview />
       <LatestPost />
       <NewsletterSignup />
       <Promoted />
+      <ClientReview />
     </div>
   );
 };
