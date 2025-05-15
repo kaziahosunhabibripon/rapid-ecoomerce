@@ -40,13 +40,16 @@ export default function WhyChoose() {
       </div>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 text-center px-4">
         {termsData.map((item) => (
-          <div className="flex items-center gap-2" key={item.id}>
-            <div className="bg-blue-100 text-slate-600 rounded-full p-2">
-              <span className="w-full h-auto text-sky-500 text-3xl">
+          <div
+            className="flex items-center gap-2  cursor-pointer shadow-sm rounded-2xl p-4 transition duration-300 ease-in-out"
+            key={item.id}
+          >
+            <div className="bg-sky-100 text-slate-600 rounded-full p-2">
+              <span className="w-full h-auto text-purple-500 text-3xl hover:animate-pulse">
                 {item.icon}
               </span>
             </div>
-            <div className="text-start space-x-2">
+            <div className="text-start space-x-2 hover:animate-pulse">
               <h3 className="text-md font-semibold text-gray-700">
                 {item.title}
               </h3>
