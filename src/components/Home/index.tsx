@@ -18,6 +18,7 @@ import LatestPost from "./LatestPost";
 import Promoted from "../Promoted/Promoted";
 import WeeklySale from "../WeeklySale/WeeklySale";
 import WhyChoose from "./WhyChoose";
+import Brand from "./Brand";
 
 const HomeComponent = () => {
   return (
@@ -40,6 +41,7 @@ const HomeComponent = () => {
       <ClientReview />
       <NewsletterSignup />
       <WhyChoose />
+      <Brand />
     </div>
   );
 };
