@@ -8,7 +8,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// ✅ Unified blog data used for both sections
 const blogs = [
   {
     author: "Johan Doe",

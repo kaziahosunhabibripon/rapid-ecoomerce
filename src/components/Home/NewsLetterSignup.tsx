@@ -31,7 +31,7 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <div className="py-12">
+    <div className="pt-12">
       <div className="w-full mx-auto bg-brand text-white p-8 py-12 text-center ">
         <h2 className="text-3xl font-bold mb-4 tracking-wide uppercase">
           GET OUR LATEST BLOGS UPDATES
