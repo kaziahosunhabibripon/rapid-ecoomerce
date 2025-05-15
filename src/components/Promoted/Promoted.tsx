@@ -10,7 +10,6 @@ import "swiper/css/pagination";
 
 export const promotedData = {
   categories: [
-    { name: "All Categories", count: 12 },
     { name: "Laptop", count: 5 },
     { name: "Mouse", count: 12 },
     { name: "Printer", count: 12 },
@@ -68,6 +67,9 @@ export default function Promoted() {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Category Sidebar */}
           <div className="bg-white rounded-lg shadow p-4">
+            <div className="py-2 px-3 cursor-pointer font-semibold hover:text-blue-600 flex justify-between items-center transition-colors">
+              All Categories <span className="mr-4">(12)</span>
+            </div>
             <div className="max-h-56 overflow-y-auto pr-2 scrollbar-sky">
               <ul className="divide-y divide-gray-200 text-gray-700">
                 {categories.map((cat, idx) => (

@@ -16,6 +16,7 @@ import HurryUpDeals from "./HurryUpDeals";
 import OfferDeals from "./OfferDeals";
 import LatestPost from "./LatestPost";
 import Promoted from "../Promoted/Promoted";
+import WeeklySale from "../WeeklySale/WeeklySale";
 
 const HomeComponent = () => {
   return (
@@ -34,6 +35,7 @@ const HomeComponent = () => {
       <OfferDeals />
       <LatestPost />
       <Promoted />
+      <WeeklySale />
       <ClientReview />
       <NewsletterSignup />
     </div>
