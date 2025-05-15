@@ -12,16 +12,14 @@ export default function WeeklySale() {
   return (
     <div className="w-full py-12 container mx-auto">
       <div className="text-center mb-8">
-        <p className="text-brand mb-2 font-semibold">
-          Features Product For you
-        </p>
+        <p className="text-brand mb-2 font-semibold">Weekly Best Sale</p>
 
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          Features Product For you
+          Weekly Best Sale Product
         </h1>
 
         <p className="text-gray-600 text-base font-medium">
-          How can you evaluate content without design
+          How can you develope products without figma design and requirement
         </p>
       </div>
       <div className="flex items-center justify-between border-b border-gray-300 mb-8">
