@@ -30,14 +30,14 @@ export default function Brnad() {
           {BrnadData.map((item) => (
             <div
               key={item.id}
-              className="flex items-center justify-center cursor-pointer hover:shadow-md border border-gray-200 transition duration-300 ease-in-out"
+              className="flex items-center  justify-center cursor-pointer hover:shadow-md border border-gray-200 transition duration-300 ease-in-out"
             >
               <Image
                 src={item.img}
                 alt={`Brnad ${item.id}`}
                 width={200}
                 height={200}
-                className="w-full h-24 "
+                className="w-full h-24"
               />
             </div>
           ))}
