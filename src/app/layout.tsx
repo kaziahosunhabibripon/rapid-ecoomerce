@@ -6,7 +6,8 @@ import { Suspense } from "react";
 import NextTopLoader from "nextjs-toploader";
 import Footer from "@/components/common/Footer";
 import GlobalProvider from "@/components/core/GlobalProvider";
-
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 const tenor = Tenor_Sans({
   subsets: ["latin"],
   weight: "400",
@@ -36,16 +37,18 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const message = await getMessages();
+  const locale = await getLocale();
   return (
-    <html lang="en">
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body
         className={`${tenor.variable} antialiased`}
-        suppressHydrationWarning // hydration erro solve
+        // suppressHydrationWarning
       >
         <NextTopLoader
           color="var(--brand-color)"
@@ -54,10 +57,12 @@ export default function RootLayout({
           speed={5}
         />
         <Suspense fallback={null}>
-          <GlobalProvider>{children}</GlobalProvider>
-          <GotoWhatspp />
-          <GoToTop />
-          <Footer />
+          <NextIntlClientProvider messages={message}>
+            <GlobalProvider>{children}</GlobalProvider>
+            <GotoWhatspp />
+            <GoToTop />
+            <Footer />
+          </NextIntlClientProvider>
         </Suspense>
       </body>
     </html>

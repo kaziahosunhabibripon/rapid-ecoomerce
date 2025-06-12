@@ -17,6 +17,7 @@
     "framer-motion": "^12.5.0",
     "lodash": "^4.17.21",
     "next": "15.2.1",
+    "next-intl": "^4.1.0",
     "nextjs-toploader": "^3.7.15",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
